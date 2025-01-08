@@ -32,4 +32,6 @@ CREATE TABLE livre_genre (
     genre_id BIGINT NOT NULL,
     PRIMARY KEY (livre_id, genre_id),
     FOREIGN KEY (livre_id) REFERENCES livre(id),
-    FOREIGN KEY (genre_id) REFERENCES genred(id);
+    FOREIGN KEY (genre_id) REFERENCES genre(id)
+);
+
