@@ -1,9 +1,9 @@
 package com.example.brief15.repository;
 
-import com.example.brief15.entity.Loaning;
+import com.example.brief15.entity.Genre;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface LoaningRepository extends JpaRepository<Loaning, Long> {
+public interface GenreRepository extends JpaRepository<Genre, Long> {
 }

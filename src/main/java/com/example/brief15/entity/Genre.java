@@ -7,12 +7,12 @@ import java.util.List;
 
 @Entity
 @Data
-public class Type {
+public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    @ManyToMany(mappedBy = "types")
-    private List<Book> books;
+    @ManyToMany(mappedBy = "genres")
+    private List<Livre> livres;
 }

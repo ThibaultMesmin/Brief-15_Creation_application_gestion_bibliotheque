@@ -6,20 +6,20 @@ import java.time.LocalDate;
 
 @Entity
 @Data
-public class Loaning {
+public class Emprunt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private LocalDate date;
-    private LocalDate returnDate;
+    private LocalDate DateRetour;
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "borrower_id")
-    private Borrower borrower;
+    @JoinColumn(name = "empreunteur_id")
+    private Emprunteur emprunteur;
 
     @ManyToOne
     @JoinColumn(name = "book_id")
-    private Book book;
+    private Livre livre;
 }

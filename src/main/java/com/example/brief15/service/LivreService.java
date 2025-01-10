@@ -1,7 +1,7 @@
 package com.example.brief15.service;
 
-import com.example.brief15.entity.Book;
-import com.example.brief15.repository.BookRepository;
+import com.example.brief15.entity.Livre;
+import com.example.brief15.repository.LivreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,24 +13,24 @@ import java.util.List;
 
 
 @Service
-public class BookService {
+public class LivreService {
         @Autowired
-        private BookRepository bookRepository;
+        private LivreRepository livreRepository;
 
-    public Book saveBook(Book book) {
-        if (book.getTitle() == null) {
+    public Livre saveBook(Livre livre) {
+        if (livre.getTitre() == null) {
             throw new IllegalArgumentException("Le titre du livre ne peut pas être vide.");
         }
-        if (book.getAuthor() == null) {
+        if (livre.getAuteur() == null) {
             throw new IllegalArgumentException("L'auteur du livre ne peut pas être vide.");
         }
-        return bookRepository.save(book); }
+        return livreRepository.save(livre); }
 
-        public List<Book> getAllBooks() {
-            return bookRepository.findAll();
+        public List<Livre> getAllBooks() {
+            return livreRepository.findAll();
         }
 
         public void deleteBook(Long id) {
-            bookRepository.deleteById(id);
+            livreRepository.deleteById(id);
         }
 }

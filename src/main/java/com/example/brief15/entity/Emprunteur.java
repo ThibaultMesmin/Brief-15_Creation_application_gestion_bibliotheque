@@ -6,13 +6,13 @@ import java.util.List;
 
 @Entity
 @Data
-public class Borrower {
+public class Emprunteur {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private String firstname;
-    private String lastname;
+    private String prenom;
+    private String nom;
 
-    @OneToMany(mappedBy = "borrower")
-    private List<Loaning> loanings;
+    @OneToMany(mappedBy = "emprunteur")
+    private List<Emprunt> emprunts;
 }

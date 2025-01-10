@@ -11,21 +11,21 @@ import java.util.List;
 
 @Entity
 @Data
-public class Book {
+public class Livre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String author;
+    private String titre;
+    private String auteur;
 
     @ManyToMany
     @JoinTable(
-            name = "book_type",
-            joinColumns = @JoinColumn(name = "book_id"),
-            inverseJoinColumns = @JoinColumn(name = "type_id")
+            name = "livre_genre",
+            joinColumns = @JoinColumn(name = "lire_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
-    private List<Type> types;
+    private List<Genre> genres;
 
-    @OneToMany(mappedBy = "book")
-    private List<Loaning> loanings;
+    @OneToMany(mappedBy = "livre")
+    private List<Emprunt> emprunts;
 }
